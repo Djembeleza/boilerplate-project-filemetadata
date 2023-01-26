@@ -1,5 +1,26 @@
 /****** Main Styling ******/
 
+@media (prefers-color-scheme: light) {
+  :root {
+      --text-color: #070807;
+      --accent-color: #779920;
+      --bg-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --bg-color: #070807;
+      --accent-color: #779920;
+      --text-color: #fff;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -18,7 +39,7 @@ p {
 }
 
 a {
-  color: #2574A9;
+  color: var(--accent-color);
 }
 
 input {
@@ -29,13 +50,17 @@ input {
 
 input#button {
   width: 230px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-weight: 600;
+  border-radius: 0.7rem;
 }
 
 .view {
   position:relative;
   margin: auto;
   margin-top: 40px;
-  border: 1px  solid  #aaa;
+  border: 1px  solid  var(--bg-color);
   padding: 20px;
   width: 60%;
   min-width: 400px;
